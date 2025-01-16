@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Form</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      width: 100%;
+      max-width: 600px;
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      color: #fff;
+      box-sizing: border-box;
+    }
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    label {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 8px 0;
+      color: #fff;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      background-color: #fff;
+      color: #333;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border: 2px solid #feb47b;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .thank-you-message {
+      display: none;
+      background-color: #dff0d8;
+      color: #3c763d;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .form-footer {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 15px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Signup Form</h2>
+    <form id="signup-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="gender">Gender</label>
+      <select id="gender" name="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label>Communication Preferences</label>
+      <label for="newsletter">
+        <input type="checkbox" id="newsletter" name="newsletter">
+        Subscribe to Newsletter
+      </label>
+
+      <div style="display: flex; justify-content: space-between;">
+        <label for="terms">
+          <input type="checkbox" id="terms" name="terms" required>
+          Accept Terms & Conditions
+        </label>
+      </div>
+
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <div id="thank-you" class="thank-you-message">
+      Thank you for signing up!
+    </div>
+    <div class="form-footer">
+      Already have an account? <a href="#" style="color: #feb47b;">Login here</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      document.getElementById('thank-you').style.display = 'block';
+      setTimeout(function() {
+        document.getElementById('thank-you').style.display = 'none';
+      }, 5000);
+    });
+  </script>
+
+</body>
+</html>
